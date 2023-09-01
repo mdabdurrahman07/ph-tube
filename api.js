@@ -21,7 +21,7 @@ const handleAllCatagories = async () =>{
 }
 const handleSingleLinkTabs = async (links) =>{
    
-    const response = await fetch(` https://openapi.programming-hero.com/api/videos/category/${links}`)
+    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${links}`)
     const linksData = await response.json()
 
     if(linksData.data.length === 0){
@@ -45,13 +45,13 @@ const handleSingleLinkTabs = async (links) =>{
       cardContainer.innerText='';
 
     linksData?.data.forEach(videoInfo =>{
-        console.log(videoInfo)
+       
        const cardsValue = document.createElement('div')
         cardsValue.innerHTML = `
         <div class="card w-80 bg-base-100  space-y-5">
         <figure><img src=${videoInfo?.thumbnail} alt="Shoes" class="w-80 h-52 relative" />
         <div class='absolute top-44 right-10'>
-          <p class="bg-black text-white">${videoInfo?.others?.posted_date ?
+          <p id="views" class="bg-black text-white">${videoInfo?.others?.posted_date ?
              ConversionOFWatchingHrsAndMnt(videoInfo?.others?.posted_date) : ''}</p>
         </div>
         </figure>
@@ -68,12 +68,14 @@ const handleSingleLinkTabs = async (links) =>{
           <p>${videoInfo?.authors[0]?.verified ? `<img class="w-5" src="${verified.imageUrl}">` : '' }</p>
          
           </div>
-          <p class="text-sm font-normal text-[#171717b3] mb-3">${videoInfo.others.views} views</p>
+          <p class="text-sm font-normal text-[#171717b3] mb-3">${videoInfo?.others?.views} views</p>
         </div>
       </div>
         `
     cardContainer.appendChild(cardsValue)
-
+          
+               
+            
     });
    
 
@@ -99,3 +101,5 @@ const ConversionOFWatchingHrsAndMnt = (hourAndMinutes) =>{
 document.getElementById('blog-btn').addEventListener('click' ,  () => {
   window.open('blog.html' , '_blank')
 })
+
+// sort function 
