@@ -68,12 +68,14 @@ const handleSingleLinkTabs = async (links) =>{
           <p>${videoInfo?.authors[0]?.verified ? `<img class="w-5" src="${verified.imageUrl}">` : '' }</p>
          
           </div>
-          <p class="text-sm font-normal text-[#171717b3] mb-3">${videoInfo?.others?.views} views</p>
+          
+          <p class="text-sm font-normal text-[#171717b3] mb-3">${videoInfo?.others?.views}  views</p>
         </div>
       </div>
         `
     cardContainer.appendChild(cardsValue)
-          
+       
+         
                
             
     });
