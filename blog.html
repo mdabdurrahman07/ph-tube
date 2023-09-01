@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube Blogs</title>
+    <!-- Tailwind & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- custom Css -->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+                               
+                                
+
+<header class="max-w-screen-lg m-auto p-5">
+    <nav class="flex justify-around items-center shadow-xl p-4">
+        <div>
+            <img src="./icons/Logo.png" alt="">
+        </div>
+        <dir>
+            <p class="text-2xl bg-red-500 text-white font-bold rounded-lg  p-2">BLOGS</p>
+        </dir>
+    </nav>
+</header>
+<main class="max-w-screen-lg m-auto p-5  bg-orange-100">
+    <section>
+        <p class="text-5xl font-bold text-left p-2">Discuss the scope of var, let, and const</p>
+        <!-- var -->
+        <p class="text-left font-semibold p-2 text-2xl text-slate-700">1.What is <span class="text-amber-600">var</span>?</p>
+        <p class="text-left font-medium p-2 text-2xl text-slate-700"><span class="text-green-700">Ans:</span> <span class="text-amber-600">Variable or var</span> are named values and can store any type of JavaScript value.</p>
+        <p class="text-left font-normal p-2 text-xl text-slate-700 bg-white">For Example <br> var a = 10; <br> var weather = "sunny";</p>
+        <p class="text-left font-semibold p-2 text-2xl text-slate-700">Naming Var</p>
+        <ul class="p-2 ml-3" style="list-style: disc;">
+            <li class="text-xl font-medium">Var is function scoped</li>
+            <li class="text-xl font-medium">Variable names are case-sensitive</li>
+            <li class="text-xl font-medium">Start them with a letter, underscore _, or dollar sign $.</li>
+           
+        </ul>
+        <!-- let  -->
+        <p class="text-left font-semibold p-2 text-2xl text-slate-700">1.What is <span class="text-sky-800">let</span> ?</p>
+        <p class="text-left font-medium p-2 text-2xl text-slate-700"><span class="text-green-700">Ans:</span>
+         <span class="text-sky-800">let</span>  is a keyword that is used to declare a block scoped variable</p>
+        <p class="text-left font-normal p-2 text-xl text-slate-700 bg-white">For Example <br> let a = 10; <br> let weather = "sunny";</p>
+        <p class="text-left font-semibold p-2 text-2xl text-slate-700">Naming Let</p>
+        <ul class="p-2 ml-3" style="list-style: disc;">
+            <li class="text-xl font-medium">let declarations are scoped to blocks as well as functions.</li>
+            <li class="text-xl font-medium">let declarations cannot be redeclare by any other declaration in the same scope</li>
+         
+        </ul>
+        <!-- const -->
+        <p class="text-left font-semibold p-2 text-2xl text-slate-700">1.What is <span class="text-fuchsia-900">const</span> ?</p>
+        <p class="text-left font-medium p-2 text-2xl text-slate-700"><span class="text-green-700">Ans:</span>
+         <span class="text-fuchsia-900"> Const </span>is another keyword to declare a variable when you do not want to change the value of that variable for the whole program.</p>
+        <p class="text-left font-normal p-2 text-xl text-slate-700 bg-white">For Example <br> const a = 10; <br> const weather = "sunny";</p>
+        <p class="text-left font-semibold p-2 text-2xl text-slate-700">Naming Const</p>
+        <ul class="p-2 ml-3" style="list-style: disc;">
+            <li class="text-xl font-medium">Variable define using const keyword cannot be reassigned, or its value cannot be changed.</li>
+            <li class="text-xl font-medium">The const variable creates only reference to the value.</li>
+         
+        </ul>
+        <!-- null and undefined  -->
+        <p class="text-5xl font-bold text-left p-2"> Let’s discuss the <span class="text-green-600">null</span> <span class="text-red-500">Vs</span> <span class="text-blue-600">undefined</span></p>
+        <img class="w-full m-auto mt-5" src="https://res.cloudinary.com/practicaldev/image/fetch/s--QnBCdU8u--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nyk66k306q20bw4sd7gn.jpg" alt="">
+        <p class="text-left font-semibold p-2 text-2xl text-slate-700">There are several differences between null and undefined, which are sometimes understood as the same.</p>
+        <!-- null -->
+        <p class=" text-left font-semibold p-2 text-2xl"> <span class="text-green-600">Null</span> It is the intentional absence of the value. It is one of the primitive values of JavaScript, type of null is <span class="text-red-600">{object}</span>. Null is an assignment value. It can be assigned to a variable as a representation of no value. </p>
+        <!-- undefined -->
+        <p class=" text-left font-semibold p-2 text-2xl"> <span class="text-blue-600">Undefined</span> It means the value does not exist in the compiler. It is the global object, type of undefined is <span class="text-red-600">undefined</span>. Undefined means a variable has been declared but has yet not been assigned a value.</p>
+        <p class="text-left font-semibold p-2 text-2xl">If you want to learn more about  <span class="text-green-600">null</span> and <span class="text-blue-600">undefined</span> please check this site <a target="_blank" class="font-bold text-pink-500" href="https://dev.to/typescripttv/what-is-the-difference-between-null-and-undefined-5h76">click here</a></p>
+        <!-- rest api  -->
+        <p class="text-5xl font-bold text-left p-2">What is  <span class="text-emerald-500">REST API</span> ?</p>
+        <p class=" text-left font-semibold p-2 text-2xl"> There are many kinds of APIs. Sufficiently describing all of them here would require many blog posts. For our purposes going forward, we will limit the scope of discussing APIs just to REST APIs. REST stands for <span><u class="text-red-600">Representational State Transfer</u></span> and is a particular kind of architectural style that APIs considered “RESTful” are constrained by and “conform to”. REST APIs are a very common and important type of API that uses HTTP protocol for data transmission. Since this HTTP protocol is used, a REST API is considered a “web service” that deals with the interaction between client applications and API servers. Using this protocol, a client sends an HTTP request for data to an API Server and then the server sends an HTTP response with encoded data back to the client.</p>
+    </section>
+
+</main>
+
+</body>
+</html>

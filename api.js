@@ -73,7 +73,9 @@ const handleSingleLinkTabs = async (links) =>{
       </div>
         `
     cardContainer.appendChild(cardsValue)
+
     });
+   
 
     }
     
@@ -89,8 +91,11 @@ const verified = {imageUrl : "https://w7.pngwing.com/pngs/80/808/png-transparent
 // calc of hours & minutes
 const ConversionOFWatchingHrsAndMnt = (hourAndMinutes) =>{
   const hours = Math.floor(hourAndMinutes / 3600)
-  const minutes = Math.floor((hourAndMinutes / 3600) /60)
+  const minutes = Math.floor((hourAndMinutes % 3600) / 60)
   return `${hours}hrs ${minutes}min ago`
 
 }
-
+// for blog 
+document.getElementById('blog-btn').addEventListener('click' ,  () => {
+  window.open('blog.html' , '_blank')
+})
