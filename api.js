@@ -23,16 +23,38 @@ const handleSingleLinkTabs = async (links) =>{
    
     const response = await fetch(` https://openapi.programming-hero.com/api/videos/category/${links}`)
     const linksData = await response.json()
+
+    if(linksData.data.length === 0){
+      const cardContainer = document.getElementById('cards-container')
+      cardContainer.classList.remove('grid')
+      cardContainer.innerHTML= `
+      <div>
+      <img class=" ml-12 md:ml-24 w-72 mt-20 my-5" src="./icons/Icon.png" alt="">
+
+
+      <p class="text-4xl font-bold mt-5 text-center">Oops!! Sorry, There is no <br> content here </p>
+      </div>
+`
+      return  cardContainer
    
-    const cardContainer = document.getElementById('cards-container')
-    cardContainer.innerText='';
+    }
+    
+    else{
+      const cardContainer = document.getElementById('cards-container')
+      cardContainer.classList.add('grid')
+      cardContainer.innerText='';
 
     linksData?.data.forEach(videoInfo =>{
-        console.log(videoInfo.thumbnail)
+        console.log(videoInfo)
        const cardsValue = document.createElement('div')
         cardsValue.innerHTML = `
         <div class="card w-80 bg-base-100  space-y-5">
-        <figure><img src=${videoInfo?.thumbnail} alt="Shoes" class="w-80 h-52" /></figure>
+        <figure><img src=${videoInfo?.thumbnail} alt="Shoes" class="w-80 h-52 relative" />
+        <div class='absolute top-44 right-10'>
+          <p class="bg-black text-white">${videoInfo?.others?.posted_date ?
+             ConversionOFWatchingHrsAndMnt(videoInfo?.others?.posted_date) : ''}</p>
+        </div>
+        </figure>
         <div>
             
         </div>
@@ -46,13 +68,15 @@ const handleSingleLinkTabs = async (links) =>{
           <p>${videoInfo?.authors[0]?.verified ? `<img class="w-5" src="${verified.imageUrl}">` : '' }</p>
          
           </div>
-          <p class="text-sm font-normal text-[#171717b3]">${videoInfo.others.views}</p>
+          <p class="text-sm font-normal text-[#171717b3] mb-3">${videoInfo.others.views} views</p>
         </div>
       </div>
         `
     cardContainer.appendChild(cardsValue)
     });
 
+    }
+    
 
 
 }
@@ -62,4 +86,11 @@ handleAllCatagories()
 handleSingleLinkTabs('1000')
 
 const verified = {imageUrl : "https://w7.pngwing.com/pngs/80/808/png-transparent-verified-right-tick-ok-blue-icon-thumbnail.png" }
+// calc of hours & minutes
+const ConversionOFWatchingHrsAndMnt = (hourAndMinutes) =>{
+  const hours = Math.floor(hourAndMinutes / 3600)
+  const minutes = Math.floor((hourAndMinutes / 3600) /60)
+  return `${hours}hrs ${minutes}min ago`
+
+}
 
