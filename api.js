@@ -73,19 +73,17 @@ const handleSingleLinkTabs = async (links) =>{
         </div>
       </div>
         `
-    cardContainer.appendChild(cardsValue)
-       
-         
-               
-            
-    });
+    cardContainer.appendChild(cardsValue)     
    
+    });
+    
 
     }
     
 
 
 }
+
    
 // calling the function 
 handleAllCatagories() 
@@ -104,4 +102,4 @@ document.getElementById('blog-btn').addEventListener('click' ,  () => {
   window.open('blog.html' , '_blank')
 })
 
-// sort function 
+
